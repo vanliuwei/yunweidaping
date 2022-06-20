@@ -51,7 +51,7 @@
         name: 'Eoscontract',
         data() {
             return {
-                nodeStatus:1,
+                nodeStatus:'',
                 make: '',
                 examine: false,
                 health: [],
@@ -111,8 +111,9 @@
                 })
             },
             reset() {
+                this.nodeStatus = ''
                 this.make = '',
-                    this.getOperationFun()
+                this.getOperationFun()
             },
             getOperationFun() {
 

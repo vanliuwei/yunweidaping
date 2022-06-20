@@ -185,3 +185,20 @@ export const getOpenArrByName = (name, routerList) => {
   })
   return arr
 }
+
+
+//获取链接上的参数
+export const getparams = ()=>{
+    let url = window.document.location.href.toString();
+    let u = url.split("?");
+    let get = {};
+    if (typeof (u[1]) == "string") {
+        u = u[1].split("&");
+        for (let i in u) {
+            let j = u[i].split("=");
+            get[j[0]] = j[1];
+        }
+    }
+    return get
+    // console.log(get,'链接上的参数')
+}

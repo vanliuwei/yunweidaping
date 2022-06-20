@@ -126,7 +126,8 @@
             },
             reset() {
                 this.make = '',
-                    this.getOperationFun()
+                this.chainNames = ''
+                this.getOperationFun()
             },
             getOperationFun() {
                 let data = {

@@ -5,7 +5,7 @@
                 <div>
                     <span>链名称：</span>
                     <Select v-model="chainNames" style="width:200px" @on-change='getstatus'>
-                        <Option v-for="item in health" :value="item.chain_name" :key="item.chain_name">{{ item.chain_name }}</Option>
+                        <Option v-for="item in healths" :value="item.chain_name" :key="item.chain_name">{{ item.chain_name }}</Option>
                     </Select>
                     &nbsp;&nbsp;&nbsp;
                     <span>节点IP：</span> <Input v-model="make" style="width: 150px" />
@@ -49,6 +49,7 @@
                     pageSize: 10,
                     pageIndex: 1
                 },
+                healths:[],
                 health: [{
                         value: 'OK',
                         label: 'OK'
@@ -105,7 +106,7 @@
         methods: {
             getchain(){
                 getList().then((res)=>{
-                    this.health = res.data.data
+                    this.healths = res.data.data
                 })
             },
             changepage(index) {
@@ -129,6 +130,7 @@
             reset() {
                 this.nodeStatus = ''
                 this.make = ''
+                this.chainNames = ''
                 this.getOperation()
             },
             getOperation() {

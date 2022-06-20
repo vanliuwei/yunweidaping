@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import {getparams,localSave} from '@/lib/util'
 
 Vue.use(VueRouter)
 
@@ -141,4 +142,13 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+    let params = getparams()
+    if(params.token){
+        localSave('token',params.token)
+    }
+    
+    console.log(11111)
+    next()
+})
 export default router
