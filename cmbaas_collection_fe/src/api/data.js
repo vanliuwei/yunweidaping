@@ -306,3 +306,12 @@ export let getList = () => Axios.get("api/v1/cmbaas/chain/getList");
 
 export let checkChain = (id,data) => Axios.post("api/v1/cmbaas/chain/checkChain?chainId="+id, data);
 
+//链监测列表查询
+export let queryChainList = (id) => Axios.get("api/v1/cmbaas/chain/queryChainList?chainId="+id);
+
+//节点监测
+export let getEosnodes = (data) => Axios.post("api/v1/resource/query/eos", data);
+
+//合约监测
+export let Eoscontracts = (data) => Axios.post("api/v1/resource/query/chain/account", data);
+
