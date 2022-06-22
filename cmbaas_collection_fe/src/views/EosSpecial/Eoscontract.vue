@@ -112,6 +112,9 @@
             this.getchain()
         },
         methods: {
+            getstatus(){
+
+            },
             getchain(){
                 getList().then((res)=>{
                     this.health = res.data.data
