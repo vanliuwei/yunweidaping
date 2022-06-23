@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="seleTile">
+  <div class="seleTile">
+    <div >
       <!-- <Button type="text"> <b>节点类型:</b> </Button>
       <Select v-model="model1" style="width:120px" @on-change='operType'>
         <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>

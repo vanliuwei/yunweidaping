@@ -47,7 +47,7 @@
                     },
                     {
                         title: 'GC结束时间',
-                        key: 'gcEndTime'
+                        key: 'updateTime'
                     }
                 ],
                 operationList: []
@@ -58,6 +58,10 @@
             this.getOperationFun()
         },
         methods: {
+            reset(){
+                this.ipfsip = ''
+                this.getOperationFun()
+            },
             msgInfo(type, content, closable = false) {
                 this.$Message[type]({
                     background: true,

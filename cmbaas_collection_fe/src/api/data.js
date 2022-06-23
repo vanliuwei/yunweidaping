@@ -314,4 +314,6 @@ export let getEosnodes = (data) => Axios.post("api/v1/resource/query/eos", data)
 
 //合约监测
 export let Eoscontracts = (data) => Axios.post("api/v1/resource/query/chain/account", data);
+//告警监测
+export let listAlertMessageAll = (data) => Axios.post("api/v1/alert/api/listAlertMessageAll", data);
 

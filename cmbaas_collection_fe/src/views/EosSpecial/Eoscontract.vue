@@ -55,14 +55,7 @@
                 chainNames:'',
                 make: '',
                 examine: false,
-                health: [{
-                        value: 'OK',
-                        label: 'OK'
-                    },
-                    {
-                        value: 'ERROR',
-                        label: 'ERROR'
-                    },
+                health: [
                 ],
                 pageParam: {
                     pageSize: 10,

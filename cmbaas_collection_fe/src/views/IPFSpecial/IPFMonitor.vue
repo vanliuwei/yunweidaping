@@ -56,7 +56,7 @@
                     },
                     {
                         title: '状态',
-                        key: 'nodeStatus'
+                        key: 'status'
                     },
                     {
                         title: '上传数量',
