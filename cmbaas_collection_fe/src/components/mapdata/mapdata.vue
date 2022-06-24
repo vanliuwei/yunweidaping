@@ -1,10 +1,16 @@
 <template>
     <div class="map_main">
         <div class="mainBox">
-          
+            
             <div class="tpss">
-                   <div id="main">
+                <div class="head">
+                    <div class="head_left">
+                        <span></span>
+                        <div class="left_txt">节点地图</div>
+                        <img class="icon_t" src="../../assets/icon.png" />
                     </div>
+                </div>
+                <div id="main"></div>
              </div>
             <div class="tps">
                 <!-- <div class="net">
@@ -458,12 +464,52 @@
             border: 1px solid;
             border-image: radial-gradient(circle, rgba(0, 237, 246, 1), rgba(0, 215, 233, 0)) 1 1;
 
+            .head{
+                height: 5%;
+                position: relative;
+                z-index: 20;
+                display: flex;
+                justify-content: space-between;
+                flex-flow: row nowrap;
+                align-items: center;
+                // margin: calc((100vw / 1920) * 25.39) 0 0 calc((100vw / 1920) * 23.03);
+                margin: 0px 0 calc((100vw / 1920) * 33) calc((100vw / 1920) * 10);
+                .head_left {
+                    display: flex;
+                    .left_txt {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #cce6ff;
+                    }
+                    span {
+                        display: inline-block;
+                        margin-right: calc((100vw / 1920) * 7);
+                        width: calc((100vw / 1920) * 4);
+                        height: calc((100vw / 1920) * 24);
+                        background-image: linear-gradient(180deg, #32eafe 0%, #0293e1 100%);
+                    }
+                    .more {
+                        position: absolute;
+                        right: 20px;
+                        color:#fff;
+                        display: flex;
+                        cursor: pointer;
+                        div {
+                            margin-top: 2px;
+                        }
+                    }
+                }
+            }
         }
         // 地图
         #main {
             width: 100%;
-            height: 67%;
+            height: 80%;
             border: none;
+            
+            div{
+                margin:0 auto;
+            }
         }
 
         // 存储节点状态表格

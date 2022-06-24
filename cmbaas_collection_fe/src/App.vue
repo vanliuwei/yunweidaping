@@ -19,7 +19,10 @@ body {
 body {
   margin: 0;
 }
+.ivu-table-wrapper{
+    margin:20px 0;
 
+}
 .icon_t{
     width: 30px;
     height: 18px;

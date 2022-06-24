@@ -58,8 +58,12 @@
                 </Sider>
                 <Layout>
                     <Header :style="{padding: 0}" class="layout-header-bar">
-                        <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}"
-                            type="md-menu" size="24"></Icon>
+                        <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
+                        <!-- <li v-for="(v,i) in routerlist" :key="i">
+                            <router-link :to="{path:v.path}">{{v.meta.title}}</router-link>
+                            <span v-if="i<routerlist.length-1">/</span>
+                        </li> -->
+
                     </Header>
                     <Content :style="{margin: '20px', background: '#fff', minHeight: '260px'}">
                          <router-view />
@@ -77,36 +81,39 @@
                 activeName: "", //当前选中
                 openName: ["Cmbass"], //默认展开二级-基础数据
                 isCollapsed: false,
-                toolMenu: [{
-                        name: "首页",
-                        to: "/index",
-                        selfIcon: "ios-navigate",
-                    },
+                toolMenu: [
+                    // {
+                    //     name: "首页",
+                    //     to: "/index",
+                    //     selfIcon: "ios-navigate",
+                    // },
                     {
                         name: "监控大屏",
                         to: "/Cmbass",
                         selfIcon: "ios-navigate",
-                        children: [{
+                        children: [
+                            {
                                 name: "运维监测大屏",
                                 to: "/monitor",
                                 selfIcon: "ios-navigate",
                             },
-                            {
-                                name: "运营分析大屏",
-                                to: "/analyse",
-                                selfIcon: "ios-keypad",
-                            },
+                            // {
+                            //     name: "运营分析大屏",
+                            //     to: "/analyse",
+                            //     selfIcon: "ios-keypad",
+                            // },
                         ],
                     },
                     {
                         name: "EOS专题",
                         to: "/Business",
                         selfIcon: "ios-keypad",
-                        children: [{
-                                name: "EOS业务",
-                                to: "/Eosbusiness",
-                                selfIcon: "ios-analytics",
-                            },
+                        children: [
+                            // {
+                            //     name: "EOS业务",
+                            //     to: "/Eosbusiness",
+                            //     selfIcon: "ios-analytics",
+                            // },
                             {
                                 name: "EOS节点监测",
                                 selfIcon: "ios-analytics",
@@ -228,23 +235,23 @@
                     //     }
                     //   ]
                     // },
-                    {
-                        name: "运营指标",
-                        selfIcon: "ios-analytics",
-                        to: "/Notice",
-                        children: [
-                            // {
-                            //   name: '资源管理',
-                            //   to: '/fault',
-                            //   selfIcon: 'ios-analytics',
-                            // },
-                            {
-                                name: "能力/应用/调用方报表",
-                                to: "/statement",
-                                selfIcon: "ios-analytics",
-                            },
-                        ],
-                    },
+                    // {
+                    //     name: "运营指标",
+                    //     selfIcon: "ios-analytics",
+                    //     to: "/Notice",
+                    //     children: [
+                    //         // {
+                    //         //   name: '资源管理',
+                    //         //   to: '/fault',
+                    //         //   selfIcon: 'ios-analytics',
+                    //         // },
+                    //         {
+                    //             name: "能力/应用/调用方报表",
+                    //             to: "/statement",
+                    //             selfIcon: "ios-analytics",
+                    //         },
+                    //     ],
+                    // },
                     {
                         name: "资源管理",
                         selfIcon: "ios-analytics",
@@ -281,6 +288,7 @@
                     //   ]
                     // },
                 ],
+                routerlist:[]
             };
         },
         methods: {
@@ -321,6 +329,17 @@
                 return ['menu-icon',this.isCollapsed ? 'rotate-icon' : ''];
             },
         },
+        //监听路由变化
+        watch:{
+            $route(to,from){
+                // let matched = to.matched;   
+                // console.log(to.matched,"2222222222")
+              
+                // this.routerlist = matched;
+            }
+            
+        }
+
     };
 </script>
 
