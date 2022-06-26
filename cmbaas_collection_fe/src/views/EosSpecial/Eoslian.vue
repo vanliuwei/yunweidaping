@@ -63,27 +63,27 @@
                 dataCount: 0,
                 operColumns: [{
                         title: '链名称',
-                        key: 'chainAccount'
+                        key: 'chain_name'
                     },
                     {
                         title: '区块高度',
-                        key: 'chainAccount'
+                        key: 'block_num'
                     },
                     {
                         title: '核心API调用量',
-                        key: 'accountType'
+                        key: 'api_num'
                     },
                     {
                         title: '网络可用性',
-                        key: 'cpuUtilizationRate'
+                        key: 'network_status'
                     },
                     {
                         title: '累计交易量',
-                        key: 'ramUtilizationRate'
+                        key: 'total_transactions'
                     },
                     {
                         title: '最新采集时间',
-                        key: 'netUtilizationRate'
+                        key: 'update_time'
                     }
                 ],
                 operationList: []
@@ -116,20 +116,11 @@
                 this.getOperationFun()
             },
             getOperationFun() {
-
-
-                if (this.make) {
-                    queryChainList(this.nodeStatus).then(res => {
-                        this.operationList = res.data.list
-                        this.dataCount = res.data.total
-                    })
-                } else {
-                    queryChainList(this.nodeStatus).then(res => {
-                        this.operationList = res.data.list
-                        this.dataCount = res.data.total
-                    })
-                }
-
+                queryChainList(this.nodeStatus).then(res => {
+                    console.log(res,"data")
+                    this.operationList = res.data.data
+                    this.dataCount = res.data.total
+                })
             },
             search() {
                 this.getOperationFun()

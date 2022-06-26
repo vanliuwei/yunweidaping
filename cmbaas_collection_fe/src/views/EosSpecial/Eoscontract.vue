@@ -126,15 +126,7 @@
                 this.getOperationFun()
             },
             getOperationFun() {
-                let data = {
-                    pageSize: this.pageParam.pageSize,
-                    pageIndex: this.pageParam.pageIndex,
-                    name: this.make,
-                    chainNames: this.chainNames
-                }
-
-               
-                Eoscontracts(data).then(res => {
+                Eoscontracts(this.pageParam.pageSize,this.pageParam.pageIndex,this.make,this.chainNames).then(res => {
                     this.operationList = res.data.list
                     this.dataCount = res.data.total
                 })

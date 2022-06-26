@@ -159,9 +159,13 @@ export let getNode = (pageSize, pageIndex, ips, nodeAddres) => {
 
 }
 // 资源监测
-export let getResources = (pageSize, pageIndex, ips) => {
-  if (ips) {
+export let getResources = (pageSize, pageIndex,chainId, ips) => {
+  if (ips&&!chainId) {
     return Axios.get("api/v1/resource/query/host/resources?pageSize=" + pageSize + '&pageIndex=' + pageIndex + '&ips=' + ips);
+  }else if(!ips&&chainId){
+    return Axios.get("api/v1/resource/query/host/resources?pageSize=" + pageSize + '&pageIndex=' + pageIndex + '&chainId=' + chainId);
+  }else if(ips&&chainId){
+    return Axios.get("api/v1/resource/query/host/resources?pageSize=" + pageSize + '&pageIndex=' + pageIndex + '&chainId=' + chainId+ '&ips=' + ips);
   } else {
     return Axios.get("api/v1/resource/query/host/resources?pageSize=" + pageSize + '&pageIndex=' + pageIndex);
   }
@@ -310,10 +314,68 @@ export let checkChain = (id,data) => Axios.post("api/v1/cmbaas/chain/checkChain?
 export let queryChainList = (id) => Axios.get("api/v1/cmbaas/chain/queryChainList?chainId="+id);
 
 //节点监测
-export let getEosnodes = (data) => Axios.post("api/v1/resource/query/eos", data);
+export let getEosnodes = (pageSize,pageIndex,nodeStatus,ips,chainNames) => {
+    if(nodeStatus&&!ips&&!chainNames){
+        return Axios.get("api/v1/resource/query/eos?pageSize="+pageSize+"&pageIndex="+pageIndex+"&nodeStatus="+nodeStatus);
+    }else if(ips&&!nodeStatus&&!chainNames){
+        return Axios.get("api/v1/resource/query/eos?pageSize="+pageSize+"&pageIndex="+pageIndex+'&ips='+ips);
+    }else if(chainNames&&!ips&&!nodeStatus){
+        return Axios.get("api/v1/resource/query/eos?pageSize="+pageSize+"&pageIndex="+pageIndex+"&chainNames="+chainNames);
+    }else if(nodeStatus&&ips&&!chainNames){
+        return Axios.get("api/v1/resource/query/eos?pageSize="+pageSize+"&pageIndex="+pageIndex+"&nodeStatus="+nodeStatus+'&ips='+ips);
+    }else if(nodeStatus&&chainNames&&!ips){
+        return Axios.get("api/v1/resource/query/eos?pageSize="+pageSize+"&pageIndex="+pageIndex+"&nodeStatus="+nodeStatus+"&chainNames="+chainNames);
+    }else if(ips&&chainNames&&!nodeStatus){
+        return Axios.get("api/v1/resource/query/eos?pageSize="+pageSize+"&pageIndex="+pageIndex+'&ips='+ips+"&chainNames="+chainNames);
+    }else if(ips&&nodeStatus&&chainNames){
+        return Axios.get("api/v1/resource/query/eos?pageSize="+pageSize+"&pageIndex="+pageIndex+"&nodeStatus="+nodeStatus+'&ips='+ips+"&chainNames="+chainNames);
+    }else if(!ips&&!nodeStatus&&!chainNames){
+        return Axios.get("api/v1/resource/query/eos?pageSize="+pageSize+"&pageIndex="+pageIndex);
+    }
+} 
 
 //合约监测
-export let Eoscontracts = (data) => Axios.post("api/v1/resource/query/chain/account", data);
+export let Eoscontracts = (pageSize,pageIndex,name,chainNames) =>{
+    if(name&&!chainNames){
+        return Axios.get("api/v1/resource/query/chain/account?pageSize="+pageSize+"&pageIndex="+pageIndex+"&name="+name);
+    }else if(!name&&chainNames){
+        return Axios.get("api/v1/resource/query/chain/account?pageSize="+pageSize+"&pageIndex="+pageIndex+'&chainNames='+chainNames);
+    }else if(name&&chainNames){
+        return Axios.get("api/v1/resource/query/chain/account?pageSize="+pageSize+"&pageIndex="+pageIndex+"&name="+name+'&chainNames='+chainNames);
+    }else if(!name&&!chainNames){
+        return Axios.get("api/v1/resource/query/chain/account?pageSize="+pageSize+"&pageIndex="+pageIndex);
+    }
+    
+} 
 //告警监测
-export let listAlertMessageAll = (data) => Axios.post("api/v1/alert/api/listAlertMessageAll", data);
+export let listAlertMessageAll = (chainId,alertLevel,description,date) => Axios.get("api/v1/alert/api/listAlertMessageAll?chainId="+chainId+"&alertLevel="+alertLevel+"&description="+description+"&date="+date);
 
+
+//省节点监测
+export let provincenode = (pageSize,pageIndex,chainName,ips,status) => {
+    if(chainName&&!ips&&!status){
+        return Axios.get("api/v1/resource/query/province/node?pageSize="+pageSize+"&pageIndex="+pageIndex+"&chainName="+chainName);
+    }else if(ips&&!chainName&&!status){
+        return Axios.get("api/v1/resource/query/province/node?pageSize="+pageSize+"&pageIndex="+pageIndex+'&ips='+ips);
+    }else if(status&&!chainName&&!ips){
+        return Axios.get("api/v1/resource/query/province/node?pageSize="+pageSize+"&pageIndex="+pageIndex+"&status="+status);
+    }else if(chainName&&ips&&!status){
+        return Axios.get("api/v1/resource/query/province/node?pageSize="+pageSize+"&pageIndex="+pageIndex+"&chainName="+chainName+'&ips='+ips);
+    }else if(chainName&&status&&!ips){
+        return Axios.get("api/v1/resource/query/province/node?pageSize="+pageSize+"&pageIndex="+pageIndex+"&chainName="+chainName+"&status="+status);
+    }else if(ips&&status&&!chainName){
+        return Axios.get("api/v1/resource/query/province/node?pageSize="+pageSize+"&pageIndex="+pageIndex+'&ips='+ips+"&status="+status);
+    }else if(ips&&chainName&&status){
+        return Axios.get("api/v1/resource/query/province/node?pageSize="+pageSize+"&pageIndex="+pageIndex+"&chainName="+chainName+'&ips='+ips+"&status="+status);
+    }else if(!ips&&!chainName&&!status){
+        return Axios.get("api/v1/resource/query/province/node?pageSize="+pageSize+"&pageIndex="+pageIndex);
+    }
+} 
+
+//获取用户名
+export let getUserName = ()=>{
+    return Axios.request({
+        url: "api/user/getUserName",
+        method: "GET",
+    });
+}

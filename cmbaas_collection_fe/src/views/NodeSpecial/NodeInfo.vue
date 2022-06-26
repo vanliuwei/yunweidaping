@@ -7,7 +7,7 @@
             <span> 所在省份：</span>
             <Input v-model="nodeAddres" style="width: 150px" /> -->
                     <span>链名称：</span>
-                    <Select v-model="lian" style="width:200px" @on-change='getstatus'>
+                    <Select v-model="lian" style="width:200px">
                         <Option v-for="item in healths" :value="item.chain_name" :key="item.chain_name">{{ item.chain_name }}</Option>
                     </Select>
                     &nbsp;&nbsp;&nbsp;
@@ -50,7 +50,8 @@
 <script>
     import {
         getNode,
-        getList
+        getList,
+        provincenode
     } from '@/api/data';
     export default {
         name: 'Eosbusiness',
@@ -144,7 +145,7 @@
                 })
             },
             getOperationFun() {
-                getNode(this.pageParam.pageSize, this.pageParam.pageIndex, this.make, this.nodeAddres).then(res => {
+                provincenode(this.pageParam.pageSize, this.pageParam.pageIndex,this.lian,this.make,this.nodeStatus).then(res => {
                     this.operationList = res.data.list
                     this.dataCount = res.data.total
                 })

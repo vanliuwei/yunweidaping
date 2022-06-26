@@ -4,7 +4,7 @@
             <div class="eosBus">
                 <div>
                     <span>链名称：</span>
-                    <Select v-model="chainNames" style="width:200px" @on-change='getstatus'>
+                    <Select v-model="chainNames" style="width:200px" >
                         <Option v-for="item in healths" :value="item.chain_name" :key="item.chain_name">{{ item.chain_name }}</Option>
                     </Select>
                     &nbsp;&nbsp;&nbsp;
@@ -134,6 +134,7 @@
                 this.getOperation()
             },
             getOperation() {
+                console.log(this.make,"make")
                 let data = {
                     pageSize: this.pageParam.pageSize,
                     pageIndex: this.pageParam.pageIndex,
@@ -141,7 +142,7 @@
                     ips: this.make,
                     chainNames: this.chainNames
                 }
-                getEosnodes(data).then(res => {
+                getEosnodes(this.pageParam.pageSize,this.pageParam.pageIndex,this.nodeStatus,this.make,this.chainNames).then(res => {
                     this.operationList = res.data.list
                     this.dataCount = res.data.total
                 })

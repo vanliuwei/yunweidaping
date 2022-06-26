@@ -14,9 +14,10 @@
                         <Option v-for="item in status" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select> &nbsp;&nbsp;&nbsp;
                     <span>时间：</span>
-                    <DatePicker type="date" style=" vertical-align: baseline" v-model="time"
-                            format="yyyy-MM-dd HH:mm:ss" @on-change='gettime'></DatePicker>&nbsp;&nbsp;&nbsp;
+                    <DatePicker type="date" style=" vertical-align: baseline" :value="time"
+                            format="yyyy-MM-dd" @on-change='gettime'></DatePicker>&nbsp;&nbsp;&nbsp;
                     <span>告警指标：</span> <Input v-model="ipfsip" style="width: 150px" />
+                    
                 </div>
                 
                 <div>
@@ -26,12 +27,14 @@
                 </div>
             </div>
             <Table :columns="operColumns" :data="operationList"> </Table>
+            
             <!-- <Page show-elevator show-sizer show-total class="page" placement="top" :total="dataCount" :page-size="pageParam.pageSize" :current.sync="pageParam.pageIndex" :page-size-opts="[10, 20, 40, 60, 100]" @on-change="changepage" style="text-align: right" @on-page-size-change="pageSizeChange" /> -->
         </div>
     </div>
 </template>
 
 <script>
+    
     import { getReport,getList,listAlertMessageAll } from "@/api/data";
     let ralte = {
         正常: "blue",
@@ -103,8 +106,8 @@
                     this.healths = res.data.data
                 })
             },
-            gettime() {
-
+            gettime(val) {
+                this.time = val
             },
             getstatus() {
 
@@ -125,13 +128,8 @@
                 });
             },
             getOperationFun() {
-                let data = {
-                    chainId:this.lian,
-                    alertLevel:this.model1,
-                    description:this.ipfsip,
-                    date:this.time,
-                }
-                listAlertMessageAll(data).then((res) => {
+                console.log(this.time,"111111111")
+                listAlertMessageAll(this.lian,this.model1,this.ipfsip,this.time).then((res) => {
                     if (res.status == 200) {
                         this.operationList = res.data;
                     }

@@ -5,7 +5,9 @@ import {
     getparams,
     localSave
 } from '@/lib/util'
-
+import {
+    getUserName
+} from '@/api/data';
 Vue.use(VueRouter)
 
 const routes = [{
@@ -223,6 +225,9 @@ router.beforeEach((to, from, next) => {
     let params = getparams()
     if (params.token) {
         localSave('token', params.token)
+        getUserName().then(()=>{
+
+        })
     }
 
     // console.log(11111)
