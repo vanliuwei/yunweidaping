@@ -225,8 +225,9 @@ router.beforeEach((to, from, next) => {
     let params = getparams()
     if (params.token) {
         localSave('token', params.token)
-        getUserName().then(()=>{
-
+        getUserName().then((res)=>{
+            // console.log("name",)
+            localSave('name', res.data.data) //保存用户名
         })
     }
 

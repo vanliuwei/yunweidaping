@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import { ips } from './config';
-
+import {localRead} from '@/lib/util'
 // const Axios = axios.create({
 //   // 开发环境中使用测试接口，生产环境中使用线上
 //   baseURL: ips[process.env.NODE_ENV]
@@ -11,7 +11,7 @@ const createToken = config => {
   // const token = Store.getState().user.token;
   // 将token放在请求头中
   // config.headers.common['Authorization'] = token;
-  config.headers.common['Authorization'] = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVfdGltZSI6MTY1NjIzNzg3NDczMywidXNlcl9uYW1lIjoiYWRtaW4iLCJzY29wZSI6WyJhbGwiXSwiZXhwaXJhdGlvbiI6IjIwMjItMDYtMjYgMTk6MDQ6MzQiLCJleHAiOjE2NTYyNDE0NzQsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiJiYTNmMTI3ZC0zZmE2LTQyNzMtOTA0MC1mOGIyZjYzYzg3ZjkiLCJjbGllbnRfaWQiOiJhNTRhMmRmZGM3ODg0ZTYwYTI0ZDQzNTUxOTU5MmZmYiJ9.B7N3dgM7zFNwehhcxvGv5J1mFWhyn4GaAMXF3Oq_So5-WEw6_iXd8xGDNnCeW-lkkKXBsUrYVWSyW45WMAbZ_d6VOON6Jpk6OXamlS2i-OeSfrcFcqtpKnWnPvOk2Ea9K4aulxGikcGIOiEUhQohP2n08m1cHaB8Cq0U3ePCv-msktXhRtYUxcKi1hXJZWfdNcXLtz0UcCibDjKqlyKv9ogbwIAXFeW3uF6bXTurS008iaqNw0UYKfsvuVCtH3eg6c5O7jlg57z-QietiUHlDe6gNTaYDVzDtiOXLdk-mOnNXc0qz3-0IFRCVGjKHPeE1z5Enu1EdgL1X8oSTpkffQ';
+  config.headers.common['Authorization'] = 'Bearer ' + localRead('token')
   return config;
 };
 

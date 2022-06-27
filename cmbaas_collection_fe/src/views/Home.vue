@@ -57,13 +57,15 @@
                     </Menu>
                 </Sider>
                 <Layout>
-                    <Header :style="{padding: 0}" class="layout-header-bar">
-                        <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
-                        <!-- <li v-for="(v,i) in routerlist" :key="i">
-                            <router-link :to="{path:v.path}">{{v.meta.title}}</router-link>
-                            <span v-if="i<routerlist.length-1">/</span>
-                        </li> -->
-
+                    <Header :style="{padding: 0}" class="layout-header-bar" v-if="routeSplitArray[1].meta.title!=='运维监测大屏'">
+                       
+                      
+                        <Breadcrumb>
+                            <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
+                            <!-- <BreadcrumbItem to="" v-for="(item, index) in routeSplitArray" :key="item.name+Math.random()"><span>{{ item.meta.title  }}</span></BreadcrumbItem> -->
+                            <span>{{routeSplitArray[1].meta.title}}</span>
+                            <span style="float: right; margin-right: 30px;">{{name}}</span>
+                        </Breadcrumb>
                     </Header>
                     <Content :style="{margin: '20px', background: '#fff', minHeight: '260px'}">
                          <router-view />
@@ -74,10 +76,12 @@
     </div>
 </template>
 <script>
+    import {localRead} from '@/lib/util'
     export default {
         name: "Home",
         data() {
             return {
+                name:'',
                 activeName: "", //当前选中
                 openName: ["Cmbass"], //默认展开二级-基础数据
                 isCollapsed: false,
@@ -298,6 +302,7 @@
         },
 
         mounted() {
+            this.name = localRead('name')
             this.activeName = this.$route.path;
             // setTimeout(function () {
             //   console.log(document.getElementsByClassName('ivu-table-body'))
@@ -327,6 +332,19 @@
             },
             rotateIcon () {
                 return ['menu-icon',this.isCollapsed ? 'rotate-icon' : ''];
+            },
+            routeSplitArray () { // 后续面包屑路由跳转逻辑开发
+                let dealObj = {}
+                // console.log(this.$router)
+                this.$router.history.current.matched.forEach(element => {
+                    if (element.meta.title === this.$route.meta.title) {
+                    dealObj[element.meta.title] = element
+                    } else {
+                    dealObj[element.meta.title] = element
+                    }
+                })
+                console.log(Object.values(dealObj))
+                return Object.values(dealObj)
             },
         },
         //监听路由变化
