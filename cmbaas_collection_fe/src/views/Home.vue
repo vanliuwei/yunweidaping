@@ -67,7 +67,7 @@
                             <span style="float: right; margin-right: 30px;">{{name}}</span>
                         </Breadcrumb>
                     </Header>
-                    <Content :style="{margin: '20px', background: '#fff', minHeight: '260px'}">
+                    <Content :style="{margin: routeSplitArray[1].meta.title!=='运维监测大屏'?'20px':'', background: '#fff', minHeight: '260px'}">
                          <router-view />
                     </Content>
                 </Layout>

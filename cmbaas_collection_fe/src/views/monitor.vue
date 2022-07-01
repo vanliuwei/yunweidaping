@@ -60,11 +60,11 @@
                 <!-- 右边 -->
                 <div class="contentBoy">
                     <!-- 存储节点状态 -->
-                    <Storage />
+                    <Storage  ref="Storage"/>
                     <!-- 业务平台智能合约 -->
-                    <Business />
+                    <Business ref="Business"/>
                     <!-- 告警信息 -->
-                    <Report />
+                    <Report ref="Report"/>
                 </div>
             </div>
         </div>
@@ -127,6 +127,11 @@
                     this.$refs.NodeData.getNode()
                     this.$refs.Peak.getTime()
                     this.$refs.Property.getPro()
+
+
+                    this.$refs.Storage.getnode()
+                    this.$refs.Business.get()
+                    this.$refs.Report.get()
                 })
             }
         },
