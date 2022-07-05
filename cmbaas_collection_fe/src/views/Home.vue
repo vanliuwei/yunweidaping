@@ -433,4 +433,7 @@
             display: none;
         }
     } 
+    /deep/.ivu-layout-sider-collapsed .ivu-menu-vertical .ivu-menu-submenu-title-icon{
+        display: none;
+    }
 </style>

@@ -286,11 +286,11 @@ export let contractDelete = (data) => Axios.post("api/v1/api/eos/account/delete"
 
 
 // 节点坐标信息
-export let coordinate = (data) => Axios.post("api/v1/nodeLocal/api/list", data);
+export let coordinate = (data) => Axios.post("api/v1/gcrecord/api/list", data);
 // 更新编辑
-export let coordinateUpdate = (data) => Axios.post("api/v1/nodeLocal/api/saveOrUpdate", data);
+export let coordinateUpdate = (data) => Axios.post("api/v1/gcrecord/api/saveOrUpdate", data);
 // 删除
-export let coordinateDelet = (id) => Axios.get("api/v1/nodeLocal/api/delete?id=" + id);
+export let coordinateDelet = (id) => Axios.get("api/v1/gcrecord/api/delete?id=" + id);
 
 // ipfs维护
 
