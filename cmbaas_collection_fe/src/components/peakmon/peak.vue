@@ -141,27 +141,33 @@
                     series: [{
                         type: "line",
                         data: this.timeValue,
+                        symbol: "none",//去掉上面的圆点
                         areaStyle: {
                             // color: "#16443D",
                         },
                         boundaryGap: false,
+                        lineStyle: { // 设置线条的style等
+                            normal: {
+                                color: '#3AFFFF', // 折线线条颜色
+                            },
+                        },
                         itemStyle: {
                             normal: {
                                 //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
-                                        color: "#0498E1", // 0% 处的颜色
+                                        color: "#009FEC", // 0% 处的颜色
                                     },
                                     {
                                         offset: 1,
-                                        color: "#0497e123", // 100% 处的颜色
+                                        color: "#051F53", // 100% 处的颜色
                                     },
                                 ]), //背景渐变色
                                 lineStyle: {
                                     // 系列级个性化折线样式
                                     width: 1,
                                     type: "solid",
-                                    color: "#0498E1", //折线的颜色
+                                    color: "#3AFFFF", //折线的颜色
                                 },
                             },
                         },
@@ -236,27 +242,33 @@
                     series: [{
                         type: "line",
                         data: this.timeValueTime,
+                        symbol: "none",//去掉上面的圆点
                         areaStyle: {
                             // color: "#16443D",
                         },
                         boundaryGap: false,
+                        lineStyle: { // 设置线条的style等
+                            normal: {
+                                color: '#3AFFFF', // 折线线条颜色
+                            },
+                        },
                         itemStyle: {
                             normal: {
                                 //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
-                                        color: "#0498E1", // 0% 处的颜色
+                                        color: "#009FEC", // 0% 处的颜色
                                     },
                                     {
                                         offset: 1,
-                                        color: "#0497e123", // 100% 处的颜色
+                                        color: "#051F53", // 100% 处的颜色
                                     },
                                 ]), //背景渐变色
                                 lineStyle: {
                                     // 系列级个性化折线样式
                                     width: 1,
                                     type: "solid",
-                                    color: "#0498E1", //折线的颜色
+                                    color: "#3AFFFF", //折线的颜色
                                 },
                             },
                         },
@@ -437,7 +449,7 @@
         }
 
         .peakTop {
-            color: #cce6ff;
+            color: #ADC8E6;
             display: flex;
             justify-content: space-between;
             box-sizing: border-box;
@@ -449,7 +461,7 @@
                 justify-content: space-evenly;
 
                 .color {
-                    color: #be464c;
+                    color:#ADC8E6;
                 }
             }
         }

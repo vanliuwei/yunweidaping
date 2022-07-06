@@ -115,11 +115,18 @@
                             },
                             // symbol: ["none", "arrow"],
                         },
+                        // splitLine:{//虚线
+                        //     show:true,
+                        //     lineStyle:{
+                        //         type:'dashed',
+                        //         color:"#fff"                            }
+                        // }
                     },
                     series: [{
                             type: "line",
-                            symbol: "circle",
+                            // symbol: "circle",
                             name: "内存",
+                            symbol: "none",//去掉上面的圆点
                             data: this.perfor.memory,
                             areaStyle: {
                                 // color: "#16443D",
@@ -130,18 +137,18 @@
                                     //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                             offset: 0,
-                                            color: "#0498E1", // 0% 处的颜色
+                                            color: "#48F84F", // 0% 处的颜色
                                         },
                                         {
                                             offset: 1,
-                                            color: "#0497e123", // 100% 处的颜色
+                                            color: "#1C335F", // 100% 处的颜色
                                         },
                                     ]), //背景渐变色
                                     lineStyle: {
                                         // 系列级个性化折线样式
                                         width: 1,
                                         type: "solid",
-                                        color: "#0498E1", //折线的颜色
+                                        color: "#48F84F", //折线的颜色
                                     },
                                 },
                             },
@@ -149,7 +156,7 @@
                         {
                             type: "line",
                             name: "磁盘",
-                            symbol: "circle",
+                            symbol: "none",
                             data: this.perfor.diskY,
                             areaStyle: {
                                 // color: "blue",
@@ -160,24 +167,24 @@
                                     //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                             offset: 0,
-                                            color: "#E93CA7", // 0% 处的颜色
+                                            color: "#A679F9", // 0% 处的颜色
                                         },
                                         {
                                             offset: 1,
-                                            color: "#ffccff60", // 100% 处的颜色
+                                            color: "#1C335F", // 100% 处的颜色
                                         },
                                     ]), //背景渐变色
                                     lineStyle: {
                                         // 系列级个性化折线样式
                                         width: 1,
                                         type: "solid",
-                                        color: "#E93CA7", //折线的颜色
+                                        color: "#A679F9", //折线的颜色
                                     },
                                 },
                             },
                         },
                         {
-                            symbol: "circle",
+                            symbol: "none",
                             type: "line",
                             name: "cpu",
                             data: this.perfor.cpuY,
@@ -190,18 +197,18 @@
                                     //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                             offset: 0,
-                                            color: "#F0C35F", // 0% 处的颜色
+                                            color: "#0CA0F5", // 0% 处的颜色
                                         },
                                         {
                                             offset: 1,
-                                            color: "#f0c25f3a", // 100% 处的颜色
+                                            color: "#1C335F", // 100% 处的颜色
                                         },
                                     ]), //背景渐变色
                                     lineStyle: {
                                         // 系列级个性化折线样式
                                         width: 1,
                                         type: "solid",
-                                        color: "#F0C35F", //折线的颜色
+                                        color: "#0CA0F5", //折线的颜色
                                     },
                                 },
                             },
@@ -313,7 +320,7 @@
 <style lang="less" scoped>
     #line {
         position: absolute;
-        top: 3%;
+        top: 10%;
         width: 100%;
         height: 100%;
     }
@@ -424,19 +431,19 @@
 
                 li:nth-child(1) {
                     span {
-                        background: #f2ba55;
+                        background: #0CA0F5;
                     }
                 }
 
                 li:nth-child(2) {
                     span {
-                        background: #ff70a8;
+                        background: #A679F9;
                     }
                 }
 
                 li:nth-child(3) {
                     span {
-                        background: #11a8ea;
+                        background: #48F84F;
                     }
                 }
             }

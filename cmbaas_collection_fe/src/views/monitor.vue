@@ -252,4 +252,16 @@
             line-height: 20px;
         }
     }
+
+    // 下拉样式修改
+    /deep/.ivu-select-dropdown{
+        padding: 0;
+        .ivu-select-item{
+            background:#162863;
+            color:#CCE6FF;
+        }
+        .ivu-select-item-selected, .ivu-select-item-selected:hover{
+            color:#2d8cf0;
+        }
+    }
 </style>
