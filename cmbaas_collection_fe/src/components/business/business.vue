@@ -83,6 +83,7 @@
         },
         methods: {
             broken3() {
+                let yName = '%'
                 let myLine = echarts.init(document.getElementById("contract"));
                 let option2 = {
                     tooltip: {
@@ -116,6 +117,7 @@
                         },
                     },
                     yAxis: {
+                        name:yName,
                         type: "value",
                         axisLine: {
                             show: false, // y轴线的显示和隐藏
@@ -130,6 +132,7 @@
                             type: "line",
                             data: this.smart.memory,
                             name: '内存',
+                            symbol: "none",
                             areaStyle: {
                                 // color: "#16443D",
                             },
@@ -139,18 +142,18 @@
                                     //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                             offset: 0,
-                                            color: "#0498E1", // 0% 处的颜色
+                                            color: "#48F84F", // 0% 处的颜色
                                         },
                                         {
                                             offset: 1,
-                                            color: "#0497e123", // 100% 处的颜色
+                                            color: "#1C335F", // 100% 处的颜色
                                         },
                                     ]), //背景渐变色
                                     lineStyle: {
                                         // 系列级个性化折线样式
                                         width: 1,
                                         type: "solid",
-                                        color: "#0498E1", //折线的颜色
+                                        color: "#48F84F", //折线的颜色
                                     },
                                 },
                             },
@@ -159,6 +162,7 @@
                             type: "line",
                             data: this.smart.netY,
                             name: 'Net',
+                            symbol: "none",
                             areaStyle: {
                                 // color: "blue",
                             },
@@ -168,18 +172,18 @@
                                     //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                             offset: 0,
-                                            color: "#E93CA7", // 0% 处的颜色
+                                            color: "#A679F9", // 0% 处的颜色
                                         },
                                         {
                                             offset: 1,
-                                            color: "#ffccff60", // 100% 处的颜色
+                                            color: "#1C335F", // 100% 处的颜色
                                         },
                                     ]), //背景渐变色
                                     lineStyle: {
                                         // 系列级个性化折线样式
                                         width: 1,
                                         type: "solid",
-                                        color: "#E93CA7", //折线的颜色
+                                        color: "#A679F9", //折线的颜色
                                     },
                                 },
                             },
@@ -188,6 +192,7 @@
                             type: "line",
                             data: this.smart.cpuY,
                             name: 'CPU',
+                            symbol: "none",
                             areaStyle: {
                                 // color: "blue",
                             },
@@ -197,18 +202,18 @@
                                     //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                             offset: 0,
-                                            color: "#F0C35F", // 0% 处的颜色
+                                            color: "#0CA0F5", // 0% 处的颜色
                                         },
                                         {
                                             offset: 1,
-                                            color: "#f0c25f3a", // 100% 处的颜色
+                                            color: "#1C335F", // 100% 处的颜色
                                         },
                                     ]), //背景渐变色
                                     lineStyle: {
                                         // 系列级个性化折线样式
                                         width: 1,
                                         type: "solid",
-                                        color: "#F0C35F", //折线的颜色
+                                        color: "#0CA0F5", //折线的颜色
                                     },
                                 },
                             },
@@ -337,7 +342,7 @@
     // 合约
     #contract {
         position: absolute;
-        top: 11%;
+        top: 17%;
         width: 100%;
         height: 90%;
     }

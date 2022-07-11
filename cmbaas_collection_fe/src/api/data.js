@@ -172,7 +172,7 @@ export let getResources = (pageSize, pageIndex,chainId, ips) => {
 }
 
 // 资源监测导出
-export let getResourcesDown = () => Axios.get("api/v1/resource/export/resources", { responseType: 'blob' });
+export let getResourcesDown = () => Axios.post("api/v1/resource/export/resources", { responseType: 'blob' });
 //  告警信息
 export let AlarmRules = (value) => Axios.post("api/v1/api/alert/rules/list", value);
 

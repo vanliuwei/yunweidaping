@@ -49,7 +49,7 @@
                 dataCount: 0,
                 operColumns: [{
                         title: '链名称',
-                        key: 'chian'
+                        key: 'chainName'
                     },
 
                     {
@@ -136,7 +136,7 @@
                 getResourcesDown().then((res) => {
                     let blob = new Blob([res.data])
                     let downloadElement = document.createElement('a')
-                    let href = window.URL.createObjectURL(blob)
+                    let href = window.URL.createObjectURL(blob,{type: ".xlsx",})
                     downloadElement.href = href
                     downloadElement.setAttribute("download", '资源监测报表.xlsx');
                     document.body.appendChild(downloadElement)

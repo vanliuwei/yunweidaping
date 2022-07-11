@@ -127,7 +127,7 @@ export default {
       operColumns: [
            {
           title: 'IP',
-          key: 'nodeIp'
+          key: 'ip'
         },
          {
           title: '节点名称',
@@ -143,11 +143,11 @@ export default {
         },
          {
           title: 'GC开始时间',
-          key: 'gcStartTime'
+          key: 'createTime'
         },
          {
-          title: 'gc结束时间',
-          key: 'gcEndTime'
+          title: 'GC结束时间',
+          key: 'updateTime'
         },
         
         //   {
@@ -213,9 +213,9 @@ export default {
         alertTitle: '修改链',
         nodeName: `${this.operationList[index].nodeName}`,
         gcCleanSpaceSize: `${this.operationList[index].gcCleanSpaceSize}`,
-        gcStartTime: `${this.operationList[index].gcStartTime}`,
-        gcEndTime: `${this.operationList[index].gcEndTime}`,
-        nodeIp: `${this.operationList[index].nodeIp}`,
+        gcStartTime: `${this.operationList[index].createTime}`,
+        gcEndTime: `${this.operationList[index].updateTime}`,
+        nodeIp: `${this.operationList[index].ip}`,
         // uploadNum: `${this.operationList[index].uploadNum}`,
         id: `${this.operationList[index].id}`
       }

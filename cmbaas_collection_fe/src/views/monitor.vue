@@ -10,7 +10,7 @@
                 </div>
                 <div class="titleTopRight">
                     <div>
-                        <span> 切换数据来源 </span>
+                        <span> 切换数据源 </span>
                         <Select v-model="chainvalue" style="width:100px" class="com_select" @on-change="changechain">
                             <Option v-for="item in chain" :value="item.id" :key="item.chain_name">{{ item.chain_name}}
                             </Option>

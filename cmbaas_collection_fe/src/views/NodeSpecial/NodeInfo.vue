@@ -152,7 +152,9 @@
             },
             reset() {
                 this.make = ''
+                this.lian = ''
                 this.nodeAddres = ''
+                this.nodeStatus = ''
                 this.getOperationFun()
             },
             search() {

@@ -29,7 +29,7 @@
                 </template>
             </Table>
         </div>
-        <Modal v-model="storModal" class-name="vertical-center-modal" width="660" footer-hide>
+        <Modal v-model="storModal" class-name="vertical-center-modal" width="835" footer-hide>
             <p slot="header">
                <span class="head_title">存储节点状态</span>
                <img src="../../assets/icon.png" />
@@ -81,12 +81,12 @@
                 stockTitle: [{
                         title: "IP",
                         fixed: "left",
-                        width: 120,
+                        width: 70,
                         slot: "ip",
                     },
                     {
                         title: "状态",
-                        width: 100,
+                        width: 70,
                         slot: "status",
                     },
                     // {
@@ -96,27 +96,27 @@
                     // },
                     {
                         title: "上传交易量",
-                        width: 150,
+                        width: 120,
                         key: "uploadNum",
                     },
                     {
                         title: "下载交易量",
                         key: "downloadNum",
-                        width: 150,
+                        width: 120,
                     },
                     {
                         title: "gc开始时间",
-                        width: 180,
+                        width: 120,
                         key: "gcStartTime",
                     },
                     {
                         title: "gc结束时间",
-                        width: 180,
+                        width: 120,
                         key: "gcStartTime",
                     },
                     {
                         title: "gc释放空间大小",
-                        width: 200,
+                        width: 150,
                         key: "storageRatio",
                     },
                 ],

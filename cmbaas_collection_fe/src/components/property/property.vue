@@ -54,6 +54,7 @@
         methods: {
             // 性能折线
             broken() {
+                let yName = '%'
                 let myLine = echarts.init(document.getElementById("line"));
                 let option4 = {
                     animation: false,
@@ -106,6 +107,8 @@
                         },
                     },
                     yAxis: {
+                        name: yName,
+                         nameLocation:'end',
                         type: "value",
                         axisLine: {
                             show: false, // y轴线的显示和隐藏
