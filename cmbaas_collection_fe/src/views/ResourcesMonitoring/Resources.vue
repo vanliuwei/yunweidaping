@@ -134,15 +134,21 @@
             },
             down() {
                 getResourcesDown().then((res) => {
-                    let blob = new Blob([res.data])
-                    let downloadElement = document.createElement('a')
-                    let href = window.URL.createObjectURL(blob,{type: ".xlsx",})
-                    downloadElement.href = href
-                    downloadElement.setAttribute("download", '资源监测报表.xlsx');
-                    document.body.appendChild(downloadElement)
-                    downloadElement.click()
-                    document.body.removeChild(downloadElement)
-                    window.URL.revokeObjectURL(href)
+                    // let blob = new Blob([res.data])
+                    // let downloadElement = document.createElement('a')
+                    // let href = window.URL.createObjectURL(blob,{type: ".xlsx",})
+                    // downloadElement.href = href
+                    // downloadElement.setAttribute("download", '资源监测报表.xlsx');
+                    // document.body.appendChild(downloadElement)
+                    // downloadElement.click()
+                    // document.body.removeChild(downloadElement)
+                    // window.URL.revokeObjectURL(href)
+
+                    let blob = new Blob([res.data]);
+                    let a = document.createElement("a"); //在dom树上创建一个a标签
+                    a.href = window.URL.createObjectURL(blob, {type: ".xlsx",}); //将url赋值给a标签的href属性
+                    a.download = "资源监测报表.xlsx"; //设置设置下载文件的名称
+                    a.click(); //主动触发a标签点击事件
 
                 })
             },
