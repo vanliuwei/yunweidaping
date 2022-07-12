@@ -63,27 +63,27 @@
                 dataCount: 0,
                 operColumns: [{
                         title: '链名称',
-                        key: 'chain_name'
+                        key: 'chainName'
                     },
                     {
                         title: '区块高度',
-                        key: 'block_num'
+                        key: 'blockNum'
                     },
                     {
                         title: '核心API调用量',
-                        key: 'api_num'
+                        key: 'apiNum'
                     },
                     {
                         title: '网络可用性',
-                        key: 'network_status'
+                        key: 'networkStatus'
                     },
                     {
                         title: '累计交易量',
-                        key: 'total_transactions'
+                        key: 'totalTransactions'
                     },
                     {
                         title: '最新采集时间',
-                        key: 'update_time'
+                        key: 'updateTime'
                     }
                 ],
                 operationList: []

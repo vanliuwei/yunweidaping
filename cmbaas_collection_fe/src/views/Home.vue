@@ -119,6 +119,11 @@
                             //     selfIcon: "ios-analytics",
                             // },
                             {
+                                name: "EOS链监测",
+                                selfIcon: "ios-analytics",
+                                to: "/Eoslian",
+                            },
+                            {
                                 name: "EOS节点监测",
                                 selfIcon: "ios-analytics",
                                 to: "/Eosnode",
@@ -128,11 +133,7 @@
                                 selfIcon: "ios-analytics",
                                 to: "/Eoscontract",
                             },
-                            {
-                                name: "EOS链监测",
-                                selfIcon: "ios-analytics",
-                                to: "/Eoslian",
-                            },
+                            
                         ],
                     },
                     {
@@ -256,11 +257,11 @@
                     //         },
                     //     ],
                     // },
-                    {
-                        name: "资源管理",
-                        selfIcon: "ios-analytics",
-                        to: "/fault",
-                    },
+                        // {
+                        //     name: "资源管理",
+                        //     selfIcon: "ios-analytics",
+                        //     to: "/fault",
+                        // },
                     // {
                     //   name: '运维监测',
                     //   to: '/Operational',
