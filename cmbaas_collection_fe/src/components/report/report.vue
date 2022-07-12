@@ -30,7 +30,7 @@
                <span class="head_title">告警信息</span>
                <img src="../../assets/icon.png" />
             </p>
-            <Table height="260" :columns="reportTitle" :data="reportData" class="com_table">
+            <Table height="260" :columns="reportTitle" :data="reportData" class="com_table padding0">
                 <template slot-scope="{ row }" slot="ip">
                     <p class="flex">
                         <span class="com_circle" :style="{backgroundColor:ralte[row.addrank]}"></span>
@@ -256,11 +256,11 @@
             }
         }
     }
-
+   
     // 表格样式
     .com_table {
         padding: 10px;
-
+        margin:0;
         /deep/.ivu-table {
             color: #cce6ff;
             font-size: 14px;
@@ -316,6 +316,9 @@
         }
     }
 
+    .padding0{
+        padding: 0px;
+    }
     // 对话框
 
     /deep/.ivu-modal-content {

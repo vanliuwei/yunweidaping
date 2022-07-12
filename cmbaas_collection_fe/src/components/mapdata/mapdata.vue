@@ -511,11 +511,13 @@
                 margin:0 auto;
             }
         }
-
+        .ivu-table-wrapper{
+             margin:0!important;
+        }
         // 存储节点状态表格
         .com_table {
             padding: 10px;
-
+           
             /deep/.ivu-table {
                 color: #cce6ff;
                 font-size: 14px;
@@ -574,6 +576,9 @@
 
     // 对话框
     .headcol {
+        .com_table{
+            margin:0;
+        }
         /deep/.ivu-modal-content {
             // background-color: #05062a;
             background: #07113B;
