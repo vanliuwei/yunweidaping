@@ -139,7 +139,8 @@ export default {
         // },
         {
           title: 'GC清理空间大小',
-          key: 'gcCleanSpaceSize'
+        //   key: 'gcCleanSpaceSize'
+            key:'gcClean'
         },
          {
           title: 'GC开始时间',

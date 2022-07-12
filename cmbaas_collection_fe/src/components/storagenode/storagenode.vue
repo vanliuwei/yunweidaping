@@ -86,7 +86,7 @@
                     },
                     {
                         title: "状态",
-                        width: 70,
+                        width: 80,
                         slot: "status",
                     },
                     // {

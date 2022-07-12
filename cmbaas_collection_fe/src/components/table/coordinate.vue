@@ -95,7 +95,7 @@ export default {
       operColumns: [
         {
           title: '节点地址',
-          key: 'nodeAddress'
+          key: 'ipfsAddress'
         },
         {
           title: '节点经纬度',
