@@ -3,7 +3,7 @@
         <div class="seleTile">
             <div class="eosBus">
                 <div>
-                    <span>IPFS IP：</span> <Input v-model="ipfsip" style="width: 150px" />
+                    <span>IPFS IP：</span> <Input placeholder="请输入节点IPFSIP" v-model="ipfsip" style="width: 150px" />
                 </div>
                 <div>
                     <Button type="primary" @click="search">查询</Button>&nbsp;&nbsp;&nbsp;

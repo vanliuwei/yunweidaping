@@ -8,7 +8,7 @@
                         <Option v-for="item in healths" :value="item.chain_name" :key="item.chain_name">{{ item.chain_name }}</Option>
                     </Select>
                     &nbsp;&nbsp;&nbsp;
-                    <span>节点IP：</span> <Input v-model="make" style="width: 150px" />
+                    <span>节点IP：</span> <Input placeholder="请输入节点IP" v-model="make" style="width: 150px" />
                     &nbsp;&nbsp;&nbsp;
                     <span>节点状态：</span>
                     <Select v-model="nodeStatus" style="width:200px" @on-change='getstatus'>

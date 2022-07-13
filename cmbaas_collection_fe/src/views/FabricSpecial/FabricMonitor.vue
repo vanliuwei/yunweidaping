@@ -3,7 +3,7 @@
     <div class="seleTile">
       <div class="eosBus">
         <div>
-          <span>节点IP：</span> <Input v-model="make" style="width: 150px" />&nbsp;&nbsp;&nbsp;
+          <span>节点IP：</span> <Input placeholder="请输入节点IP"  v-model="make" style="width: 150px" />&nbsp;&nbsp;&nbsp;
           <!-- <span> 所在省份：</span>
           <Input v-model="nodeAddres" style="width: 150px" /> -->
         </div>

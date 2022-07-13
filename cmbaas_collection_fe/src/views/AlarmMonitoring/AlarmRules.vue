@@ -3,7 +3,7 @@
         <div class="seleTile">
             <div class="eosBus">
                 <div>
-                    <span>告警指标：</span> <Input v-model="ipfsip" style="width: 150px" />&nbsp;&nbsp;&nbsp;
+                    <span>告警指标：</span> <Input placeholder="请输入告警指标"  v-model="ipfsip" style="width: 150px" />&nbsp;&nbsp;&nbsp;
                     <span>状态：</span>
                     <Select v-model="model1" style="width:100px" @on-change='getstatus'>
                         <Option v-for="item in status" :value="item.value" :key="item.value">{{ item.label }}</Option>

@@ -8,7 +8,7 @@
                         <Option v-for="item in healths" :value="item.id" :key="item.chain_name">
                             {{ item.chain_name }}</Option>
                     </Select>&nbsp;&nbsp;&nbsp;
-                    <span>主机IP：</span> <Input v-model="make" style="width: 150px" />
+                    <span>主机IP：</span> <Input placeholder="请输入主机IP"  v-model="make" style="width: 150px" />
                 </div>
                 <div>
                     <Button type="primary" @click="search">查询</Button> &nbsp;&nbsp;&nbsp;

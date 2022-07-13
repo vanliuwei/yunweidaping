@@ -16,7 +16,7 @@
                     <span>时间：</span>
                     <DatePicker type="date" style=" vertical-align: baseline" :value="time"
                             format="yyyy-MM-dd" @on-change='gettime'></DatePicker>&nbsp;&nbsp;&nbsp;
-                    <span>告警指标：</span> <Input v-model="ipfsip" style="width: 150px" />
+                    <span>告警指标：</span> <Input placeholder="请输入告警指标"  v-model="ipfsip" style="width: 150px" />
                     
                 </div>
                 

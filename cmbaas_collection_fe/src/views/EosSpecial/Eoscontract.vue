@@ -8,7 +8,7 @@
                         <Option v-for="item in health" :value="item.chain_name" :key="item.chain_name">{{ item.chain_name }}</Option>
                     </Select>
                     &nbsp;&nbsp;&nbsp;
-                    <span>合约名称：</span> <Input v-model="make" style="width: 150px" />
+                    <span>合约名称：</span> <Input placeholder="请输入合约名称" v-model="make" style="width: 150px" />
                 </div>
                 <div>
                     <Button type="primary" @click="search">查询</Button>&nbsp;&nbsp;&nbsp;
