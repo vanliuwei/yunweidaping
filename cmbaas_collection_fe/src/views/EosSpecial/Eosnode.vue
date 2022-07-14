@@ -91,7 +91,7 @@
                         title: '磁盘利用率',
                         key: 'diskUtilizationRate'
                     }, {
-                        title: '区块高度',
+                        title: '最新采集时间',
                         key: 'blockNum'
                     },
                 ],
