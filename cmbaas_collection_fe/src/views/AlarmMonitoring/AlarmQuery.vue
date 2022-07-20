@@ -14,7 +14,7 @@
                         <Option v-for="item in status" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select> &nbsp;&nbsp;&nbsp;
                     <span>时间：</span>
-                    <DatePicker type="date" style=" vertical-align: baseline" :value="time"
+                    <DatePicker placeholder="请选择时间" type="date" style=" vertical-align: baseline" :value="time"
                             format="yyyy-MM-dd" @on-change='gettime'></DatePicker>&nbsp;&nbsp;&nbsp;
                     <span>告警指标：</span> <Input placeholder="请输入告警指标"  v-model="ipfsip" style="width: 150px" />
                     

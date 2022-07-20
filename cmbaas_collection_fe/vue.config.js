@@ -24,8 +24,9 @@ module.exports = {
     proxy: { // 配置跨域
       '/api': {
         // target: 'http://10.125.8.40:3924/',
-        target:'http://10.0.42.60:3924/',
+        // target:'http://10.0.42.60:3924/',//测试
         // target:'http://10.125.8.123:3924/',
+        target:'http://10.248.17.158:3924/',
         ws: true,
         changOrigin: true,
         timeout: 5 * 60 * 1000,

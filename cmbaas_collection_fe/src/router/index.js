@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import {
     getparams,
+    localRead,
     localSave
 } from '@/lib/util'
 import {
@@ -10,7 +11,8 @@ import {
 } from '@/api/data';
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+    {
         path: '/',
         redirect: '/monitor'
     },
@@ -212,7 +214,15 @@ const routes = [{
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () => import( /* webpackChunkName: "about" */ '../views/About.vue')
-    }
+    },
+    {
+        path: '/notoken',
+        name: 'notoken',
+        meta: {
+            title: '暂无权限'
+        },
+        component: () => import('../views/notoken.vue')
+      },
 ]
 
 const router = new VueRouter({
@@ -223,15 +233,25 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     let params = getparams()
-    if (params.token) {
+    if (to.name == 'notoken') {
+        next();
+    } else if (params.token) {
         localSave('token', params.token)
         getUserName().then((res)=>{
             // console.log("name",)
             localSave('name', res.data.data) //保存用户名
         })
+        next()
+    }else if (localRead('token')) {
+        // console.log("2222")
+        next()
+    } else {
+        console.log(to.name, '3333');
+        // router.push({name:'notoken'})
+        next({ name: 'notoken' })
+    
     }
 
-    // console.log(11111)
-    next()
+   
 })
 export default router

@@ -1,6 +1,8 @@
 import Axios from 'axios';
 import { ips } from './config';
 import {localRead} from '@/lib/util'
+import router from '../router'
+
 // const Axios = axios.create({
 //   // 开发环境中使用测试接口，生产环境中使用线上
 //   baseURL: ips[process.env.NODE_ENV]
@@ -36,6 +38,11 @@ Axios.interceptors.response.use(config => {
   return config;
 
 }, err => {
+    if(err.response.data.code=="C0005"){
+        console.log(err.response.data,"响应拦截")
+        localStorage.removeItem("token")
+        router.push({ path: '/notoken' })
+    }
   message.error('网络错误,请稍后再试!');
   return Promise.reject(err)
 })
