@@ -2,11 +2,11 @@
     <div>
         <div class="notoken">
             <img src="../assets/indexHome/logor.png" alt="" >
-            <!-- <p class="titleone">CMBaaS业务运营平台</p> -->
+            <p class="titleone">CMBaaS运维分析平台</p>
             <p class="titletwo">token无效，请从CMBaaS访问该平台</p>
         </div>
        
-        <!-- <p class="bottomtitle">Copyright © 2022 中移信息技术有限公司</p> -->
+        <p class="bottomtitle">Copyright © 2022 中移信息技术有限公司</p>
     </div>
 </template>
 
