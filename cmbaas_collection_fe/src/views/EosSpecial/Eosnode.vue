@@ -70,7 +70,7 @@
                     },
                     {
                         title: '节点类型',
-                        key: 'nodeIp'
+                        key: 'nodeType'
                     },
                     {
                         title: '端口',
@@ -78,7 +78,7 @@
                     },
                     {
                         title: '节点状态',
-                        key: 'port'
+                        key: 'nodeStatus'
                     },
                     {
                         title: 'CPU利用率',

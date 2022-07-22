@@ -128,6 +128,7 @@
                     this.$refs.Peak.getTime()
                     this.$refs.Property.getPro()
 
+                    this.$refs.MapData.getMap()
 
                     this.$refs.Storage.getnode()
                     this.$refs.Business.get()
